@@ -1,52 +1,185 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏢 IT Solution - Company Profile Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Modern company profile website untuk jasa IT solution yang dibangun dengan Laravel, Tailwind CSS v4, dan Lucide Icons.
 
-## About Laravel
+## ✨ Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 🎨 **Modern Design** - Clean dan professional design
+- 🌓 **Dark/Light Mode** - Toggle tema dengan localStorage persistence
+- 📱 **Responsive** - Mobile-first design yang sempurna di semua device
+- ⚡ **Fast Performance** - Optimized dengan Vite dan Tailwind CSS v4
+- 🎯 **SEO Friendly** - Semantic HTML dan meta tags
+- 🔤 **Font Poppins** - Typography yang modern dan readable
+- 🎨 **Lucide Icons** - Beautiful SVG icons
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Framework**: Laravel 12.x
+- **CSS**: Tailwind CSS v4
+- **Icons**: Lucide Icons
+- **Font**: Google Fonts (Poppins)
+- **Build Tool**: Vite
+- **Database**: SQLite (default) / MySQL / PostgreSQL
 
-## Learning Laravel
+## 📄 Halaman
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Home** - Hero section, services overview, why choose us
+2. **Services** - Detail layanan IT yang ditawarkan:
+   - Web Development
+   - CCTV Installation
+   - Network Setup
+   - Information Systems
+3. **About** - Profil perusahaan, misi, visi, dan nilai
+4. **Contact** - Informasi kontak dan form kontak
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Quick Start
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
 
-## Laravel Sponsors
+- PHP >= 8.2
+- Composer
+- Node.js >= 18
+- NPM atau Yarn
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Installation
 
-### Premium Partners
+1. Clone repository
+```bash
+git clone https://github.com/username/company-profile.git
+cd company-profile
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. Install PHP dependencies
+```bash
+composer install
+```
 
-## Contributing
+3. Install NPM dependencies
+```bash
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Setup environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. Setup database
+```bash
+# Untuk SQLite (default)
+touch database/database.sqlite
+php artisan migrate
+
+# Atau konfigurasi MySQL/PostgreSQL di .env
+```
+
+6. Build assets
+```bash
+npm run build
+```
+
+7. Run development server
+```bash
+php artisan serve
+```
+
+8. Akses aplikasi di `http://localhost:8000`
+
+## 🔧 Development
+
+Untuk development dengan hot reload:
+
+```bash
+# Terminal 1 - Laravel server
+php artisan serve
+
+# Terminal 2 - Vite dev server
+npm run dev
+```
+
+## 🌐 Deploy ke Coolify
+
+Panduan lengkap deploy ke Coolify ada di **[DEPLOY.md](DEPLOY.md)**
+
+Quick steps:
+1. Push project ke Git repository
+2. Buat project baru di Coolify
+3. Connect dengan repository
+4. Set environment variables (lihat `.env.coolify`)
+5. Deploy!
+
+## 📦 Build untuk Production
+
+```bash
+npm run build
+composer install --optimize-autoloader --no-dev
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## 🎨 Customization
+
+### Mengubah Warna
+
+Edit `resources/css/app.css` untuk custom color palette:
+
+```css
+@theme {
+    --color-primary: #3b82f6;
+    --color-secondary: #8b5cf6;
+}
+```
+
+### Mengubah Font
+
+Ganti Google Fonts import di `resources/css/app.css`:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;500;600;700&display=swap');
+
+@theme {
+    --font-sans: 'YourFont', sans-serif;
+}
+```
+
+### Menambah/Mengubah Content
+
+Edit file Blade di `resources/views/`:
+- `home.blade.php` - Halaman utama
+- `services.blade.php` - Halaman services
+- `about.blade.php` - Halaman about
+- `contact.blade.php` - Halaman contact
+
+## 📝 Environment Variables
+
+Lihat file `.env.coolify` untuk daftar lengkap environment variables yang diperlukan.
+
+Key variables:
+- `APP_NAME` - Nama aplikasi
+- `APP_URL` - URL aplikasi
+- `DB_CONNECTION` - Database driver (sqlite/mysql/pgsql)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@username](https://github.com/username)
+
+## 🙏 Acknowledgments
+
+- Laravel Framework
+- Tailwind CSS
+- Lucide Icons
+- Coolify for hosting
 
 ## Code of Conduct
 
